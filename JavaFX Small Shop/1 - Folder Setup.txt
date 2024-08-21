@@ -1,0 +1,10 @@
+utils
+models
+screens
+
+
+utils -> DatabaseConnector.java
+
+models -> Student.java
+
+screens -> CategoryScreen.java

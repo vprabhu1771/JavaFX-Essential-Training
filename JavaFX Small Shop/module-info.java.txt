@@ -1,0 +1,12 @@
+module com.example.demo18 {
+    requires javafx.controls;
+    requires javafx.fxml;
+    requires java.sql;
+
+
+    opens com.example.demo18 to javafx.fxml;
+    exports com.example.demo18;
+    // Add this line to open the package
+    opens com.example.demo18.screens to javafx.graphics;  
+    opens com.example.demo18.models to javafx.base;
+}

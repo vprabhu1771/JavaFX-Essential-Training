@@ -1,0 +1,45 @@
+In IntelliJ IDEA, if your `dashboard.fxml` is located in the `resources/application package`, you can obtain its actual path using the following method:
+
+src
+└── main
+    └── resources
+        └── application
+            └── dashboard.fxml
+
+
+```java
+String path = getClass().getResource("/application/dashboard.fxml").toExternalForm();
+System.out.println("Dashboard FXML Path: " + path);
+```
+
+In your `MainController`, you can use this code to print the actual path of the `dashboard.fxml` to the console. Ensure that you run this code after the FXML file has been loaded.
+
+If you want to load the FXML file using `FXMLLoader`, you can use the following code:
+
+```java
+@FXML
+private void openDashboard(ActionEvent event) {
+    try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/dashboard.fxml"));
+        Parent root = loader.load();
+
+        // Get the controller instance
+        DashboardController dashboardController = loader.getController();
+
+        // Set up your controller if needed
+        // dashboardController.setupMethod(...);
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Dashboard");
+        stage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+        // Handle the exception appropriately in a real-world scenario
+    }
+}
+```
+
+Note that the path used in `getResource` should start with a forward slash (`/`) to indicate the root of the classpath. The `application` in the path corresponds to the `application` package in your resources.
+
+Remember to replace `DashboardController` with the actual name of your controller class if it's different.

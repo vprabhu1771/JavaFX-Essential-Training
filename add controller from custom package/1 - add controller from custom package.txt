@@ -1,0 +1,9 @@
+module com.example.javafxposapplication {
+    requires javafx.controls;
+    requires javafx.fxml;
+
+    opens com.example.javafxposapplication to javafx.fxml;
+
+    exports com.example.javafxposapplication;  // add this line
+    exports com.example.javafxposapplication.controller;  // add this line
+}

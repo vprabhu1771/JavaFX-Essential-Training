@@ -1,0 +1,17 @@
+It appears that the directory structure you've provided might not align with the expected structure for accessing resources using `getClass().getResource("/application/dashboard.fxml")`.
+
+Given the provided directory structure:
+
+```
+C:\Users\<user-name>\IdeaProjects\JavaFXPOSApplication\src\main\resources\com\example\javafxposapplication
+```
+
+You should adjust the `getResource` path based on this structure. If the `dashboard.fxml` file is located directly in the `javafxposapplication` directory, you should use:
+
+```java
+System.out.println(getClass().getResource("/com/example/javafxposapplication/dashboard.fxml"));
+```
+
+Make sure that the case of the directory and file names in the path matches the actual case on the file system, as file systems are case-sensitive.
+
+If the `dashboard.fxml` file is located in a different subdirectory, adjust the path accordingly. Check the exact structure under `javafxposapplication` to determine the correct relative path.

@@ -1,0 +1,31 @@
+Here's a list of some commonly used JavaFX UI controls:
+
+1. Button
+2. Label
+3. TextField
+4. TextArea
+5. PasswordField
+6. CheckBox
+7. RadioButton
+8. ToggleButton
+9. ComboBox
+10. ChoiceBox
+11. ListView
+12. TreeView
+13. TableView
+14. TableColumn
+15. ProgressBar
+16. ProgressIndicator
+17. Slider
+18. ScrollPane
+19. TabPane
+20. Accordion
+21. TitledPane
+22. MenuBar
+23. Menu
+24. MenuItem
+25. ContextMenu
+26. DatePicker
+27. ColorPicker
+
+These are just some of the UI controls provided by JavaFX for building graphical user interfaces. Each control serves a specific purpose and can be customized according to your application's needs.

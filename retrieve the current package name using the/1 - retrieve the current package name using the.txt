@@ -1,0 +1,44 @@
+In Java, you can retrieve the current package name using the `getClass().getPackage().getName()` method. This will give you the package name of the class where the method is called. Here's an example:
+
+```java
+package com.example.javafxposapplication.util;
+
+public class PackageNameUtil {
+
+    public static String getCurrentPackageName() {
+        return PackageNameUtil.class.getPackage().getName();
+    }
+
+    public static void main(String[] args) {
+        String packageName = getCurrentPackageName();
+        System.out.println("Current package name: " + packageName);
+    }
+}
+```
+
+In this example, the `getCurrentPackageName` method retrieves the package name of the `PackageNameUtil` class. When you run the `main` method, it will print the current package name to the console.
+
+If you want to get the package name dynamically from any class, you can create a utility method that takes a `Class` parameter:
+
+```java
+package com.example.javafxposapplication.util;
+
+public class PackageNameUtil {
+
+    public static String getPackageName(Class<?> clazz) {
+        return clazz.getPackage().getName();
+    }
+
+    public static void main(String[] args) {
+        String packageName = getPackageName(PackageNameUtil.class);
+        System.out.println("Current package name: " + packageName);
+    }
+}
+```
+
+Now, you can use this utility method with any class to get its package name. For example:
+
+```java
+String packageName = PackageNameUtil.getPackageName(ProductDAO.class);
+System.out.println("ProductDAO package name: " + packageName);
+```

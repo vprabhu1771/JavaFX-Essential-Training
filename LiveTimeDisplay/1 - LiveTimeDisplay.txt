@@ -1,0 +1,62 @@
+To display the current system time and update it in real-time, you can use JavaFX. Here's a simple example using a `Label` to display the time, and a `Timeline` to update it every second:
+
+```java
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+import javafx.util.Duration;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class LiveTimeDisplay extends Application {
+
+    private Label timeLabel;
+
+    @Override
+    public void start(Stage primaryStage) {
+        timeLabel = new Label();
+        updateTime(); // Set initial time
+
+        // Create a Timeline to update the time every second
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.seconds(1), event -> updateTime())
+        );
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
+
+        StackPane root = new StackPane();
+        root.getChildren().add(timeLabel);
+
+        Scene scene = new Scene(root, 300, 200);
+
+        primaryStage.setTitle("Live Time Display");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    private void updateTime() {
+        Date now = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+        String formattedTime = dateFormat.format(now);
+        timeLabel.setText("Current Time: " + formattedTime);
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+```
+
+In this example:
+
+- The `Label` (`timeLabel`) is used to display the current time.
+- The `updateTime` method formats the current time and sets the text of the label.
+- A `Timeline` is used to trigger the `updateTime` method every second.
+- The `SimpleDateFormat` is used to format the time in the desired pattern (`"HH:mm:ss"`).
+
+You can customize the code based on your specific needs. This is a basic example, and you can enhance it with additional features or styles as required.
