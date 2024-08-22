@@ -2,7 +2,7 @@
  
 ![Image](1.PNG)
 
-3. `LabelExample.java`
+2. `LabelExample.java`
 
 ```
 package com.example.helloworld;
