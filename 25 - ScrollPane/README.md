@@ -4,7 +4,7 @@
  
 ![Image](2.PNG)
  
-4. `ScrollPaneExample.java`
+3. `ScrollPaneExample.java`
 
 ```
 package com.example.helloworld;
